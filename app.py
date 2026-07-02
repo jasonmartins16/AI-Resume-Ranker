@@ -3,11 +3,19 @@ import sys
 
 # Windows DLL directory registration to prevent PyTorch DLL initialization failures
 if os.name == "nt":
-    possible_torch_libs = [
-        os.path.join(os.path.dirname(__file__), "env", "Lib", "site-packages", "torch", "lib"),
-        os.path.join(os.path.dirname(sys.executable), "Lib", "site-packages", "torch", "lib")
-    ]
-    for lib_path in possible_torch_libs:
+    import site
+    import sysconfig
+    possible_dirs = []
+    try:
+        possible_dirs.extend(site.getsitepackages())
+    except Exception:
+        pass
+    try:
+        possible_dirs.append(sysconfig.get_path("purelib"))
+    except Exception:
+        pass
+    for d in possible_dirs:
+        lib_path = os.path.join(d, "torch", "lib")
         if os.path.exists(lib_path):
             try:
                 os.add_dll_directory(lib_path)
