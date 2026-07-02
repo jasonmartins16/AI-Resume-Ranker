@@ -12,10 +12,9 @@ wheels/
 env/
 
 # data
-data/
 data/candidates.jsonl
 data/candidate_embeddings.npy
+data/candidate_ids.json
 
 # models
 models/
-   
