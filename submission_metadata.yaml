@@ -72,7 +72,13 @@ ai_usage_summary: |
 # Approach summary (optional but recommended)
 # ============================================================================
 methodology_summary: |
-  Hybrid retrieval and ranking system designed for high-performance candidate matching. First, a Honeypot Filter weeds out corrupt profiles with illogical timelines or skill anomalies. Clean profiles are pre-scored using a multi-factor heuristic (evaluating target experience, Noida/Pune location preference, skill proficiency/duration, role title fit, and an IT consulting firm penalty). For semantic retrieval, a local `all-MiniLM-L6-v2` SentenceTransformer model encodes profiles and computes cosine similarity against the job description. Warm cache loading evaluates 100K profiles in <5 seconds; a cold fallback filters the top 1,000 heuristic candidates for cpu encoding in <15 seconds. Composite scores (60% semantic, 40% heuristic) are adjusted via behavioral multipliers (open to work, response rate/time, notice period, active recency, salary expectations). Sorting is deterministic (descending score, ascending candidate ID). Finally, a template-driven engine generates hallucination-free, rank-appropriate explanations.
+  Hybrid retrieval and ranking system designed for high-performance candidate matching. 
+  First, a Honeypot Filter weeds out corrupt profiles with illogical timelines or skill anomalies. 
+  Clean profiles are pre-scored using a multi-factor heuristic (evaluating target experience, Noida/Pune location preference, skill proficiency/duration, role title fit, and an IT consulting firm penalty). 
+  For semantic retrieval, a local `all-MiniLM-L6-v2` SentenceTransformer model encodes profiles and computes cosine similarity against the job description. 
+  Warm cache loading evaluates 100K profiles in <5 seconds; a cold fallback filters the top 1,000 heuristic candidates for cpu encoding in <15 seconds. 
+  Composite scores (60% semantic, 40% heuristic) are adjusted via behavioral multipliers (open to work, response rate/time, notice period, active recency, salary expectations). Sorting is deterministic (descending score, ascending candidate ID). 
+  Finally, a template-driven engine generates hallucination-free, rank-appropriate explanations.
 
 # ============================================================================
 # Declarations
