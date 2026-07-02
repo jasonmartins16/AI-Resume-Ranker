@@ -9,9 +9,9 @@ import torch
 from sentence_transformers import SentenceTransformer
 
 # Paths and Constants
-MODEL_DIR = "e:/AI_Resume_Ranker/models/all-MiniLM-L6-v2"
-PRECOMPUTED_IDS_PATH = "e:/AI_Resume_Ranker/data/candidate_ids.json"
-PRECOMPUTED_EMB_PATH = "e:/AI_Resume_Ranker/data/candidate_embeddings.npy"
+MODEL_DIR = "models/all-MiniLM-L6-v2"
+PRECOMPUTED_IDS_PATH = "data/candidate_ids.json"
+PRECOMPUTED_EMB_PATH = "data/candidate_embeddings.npy"
 
 # JD Text representation for semantic comparison
 JD_TEXT = (

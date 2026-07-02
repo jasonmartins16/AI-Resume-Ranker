@@ -14,6 +14,7 @@ pinned: false
 
 An intelligent, production-ready candidate retrieval and ranking system designed to match a pool of 100,000 candidates against a **Senior AI Engineer (Founding Team)** job description. The system executes in less than 3 minutes on CPU by leveraging a hybrid screening and caching architecture, ensuring offline reliability, high precision, and deterministic ordering.
 
+Output is the `submission.csv` file.
 ---
 
 ## 🏆 Key Features
